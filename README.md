@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DLM Movies 🎬
+
+An IMDb-style movie discovery platform built with Next.js 15, featuring curated movie lists, advanced search, and beautiful UI with TMDB API integration.
+
+## Features
+
+- 🎥 **Hero Carousel**: Auto-playing slideshow of trending movies
+- 🎯 **Curated Lists**: Hand-picked collections (Christmas movies, Entrepreneur films, Student favorites, etc.)
+- 🔍 **Advanced Search**: Find any movie with real-time search
+- 📱 **Responsive Design**: Works beautifully on all devices
+- ⚡ **Server-Side Rendering**: Fast, SEO-optimized pages
+- 🎨 **IMDb-style Design**: Dark theme with yellow accents
+- ⭐ **Movie Details**: Full info including cast, trailers, ratings, and similar movies
+- 📊 **Structured Data**: Rich snippets for better SEO
+
+## Tech Stack
+
+- Modern React framework with App Router
+- TypeScript for type safety
+- Tailwind CSS for styling
+- Lucide React for icons
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
+- Node.js 18+ installed
+- API key (already configured in `.env.local`)
+
+### Installation
+
+1. Install dependencies:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Run the development server:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```
+dlm-movies/
+├── app/
+│   ├── layout.tsx          # Root layout with SEO metadata
+│   ├── page.tsx            # Homepage with hero & carousels
+│   ├── movie/[id]/         # Dynamic movie detail pages
+│   ├── popular/            # Popular movies page
+│   ├── top-rated/          # Top rated movies page
+│   ├── now-playing/        # Now playing movies page
+│   ├── search/             # Search functionality
+│   ├── curated/            # Curated lists hub & pages
+│   ├── sitemap.ts          # Dynamic sitemap generation
+│   └── robots.ts           # Robots.txt configuration
+├── components/
+│   ├── Header.tsx          # Navigation header
+│   ├── HeroSection.tsx     # Hero carousel component
+│   ├── MovieCard.tsx       # Movie card with ratings
+│   └── MovieCarousel.tsx   # Horizontal scrolling carousel
+├── lib/
+│   └── tmdb.ts            # TMDB API service functions
+└── types/
+    └── movie.ts           # TypeScript interfaces
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Features in Detail
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### SEO Optimizations
+- Server-side rendering for all pages
+- Dynamic metadata generation
+- Open Graph and Twitter Cards
+- Structured data (Schema.org) for movies
+- Dynamic sitemap with movie pages
+- Robots.txt configuration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Curated Lists
+- Christmas Movies
+- Movies for Entrepreneurs
+- Movies for Students
+- And more...
 
-## Deploy on Vercel
+### Movie Detail Pages
+- High-quality backdrop and poster images
+- Ratings, runtime, and release year
+- Full cast with photos
+- Director information
+- YouTube trailer integration
+- Similar movie recommendations
+- Structured data for SEO
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The application is ready for deployment to any modern hosting platform that supports Node.js applications.
+
+## Credits
+
+Built with modern web technologies and best practices.

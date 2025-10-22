@@ -1,0 +1,6 @@
+{
+  "env": {
+    "TMDB_API_KEY": "279a50fc4ded138312febc01a1b003b9",
+    "NEXT_PUBLIC_TMDB_API_KEY": "279a50fc4ded138312febc01a1b003b9"
+  }
+}
