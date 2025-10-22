@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { Search as SearchIcon } from 'lucide-react';
 import { tmdb } from '@/lib/tmdb';
@@ -8,7 +8,7 @@ import { Movie } from '@/types/movie';
 import MovieCard from '@/components/MovieCard';
 import Footer from '@/components/Footer';
 
-export default function SearchPage() {
+function SearchContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [query, setQuery] = useState(searchParams.get('q') || '');
@@ -98,5 +98,21 @@ export default function SearchPage() {
       </div>
       <Footer />
     </main>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={
+      <main className="min-h-screen bg-black py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-[60vh]">
+          <div className="text-center py-12">
+            <div className="inline-block w-8 h-8 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin"></div>
+          </div>
+        </div>
+      </main>
+    }>
+      <SearchContent />
+    </Suspense>
   );
 }
