@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { tmdb } from '@/lib/tmdb';
-import MovieCard from '@/components/MovieCard';
+import SortableMovieGrid from '@/components/SortableMovieGrid';
 import Footer from '@/components/Footer';
 import { curatedMovieLists } from '@/lib/curatedLists';
 
@@ -26,11 +26,7 @@ export default async function SciFiMoviesPage() {
             </p>
           </div>
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-            {movies.map((movie) => (
-              <MovieCard key={movie.id} movie={movie} />
-            ))}
-          </div>
+          <SortableMovieGrid movies={movies} />
         </div>
       </main>
       <Footer />
